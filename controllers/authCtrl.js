@@ -48,7 +48,7 @@ const authCtrl = {
       if (!name || !email || !password)
         return res.status(400).json({ msg: 'Please fill up every field.' });
 
-      if (!validateEmail)
+      if (!validateEmail(email))
         return res
           .status(400)
           .json({ msg: 'Please provide valid email address.' });
